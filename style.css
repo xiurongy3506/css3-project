@@ -1,0 +1,88 @@
+/*The Whole page*/
+html{
+    background:url(https://static.pexels.com/photos/399161/pexels-photo-399161.jpeg) no-repeat center center fixed;
+    background-size: cover;
+    animation: appear 3s ease-in 0s 1 normal;
+}
+
+/*Codes for heading*/
+h1 {
+    height: 40px;
+    transform: translate(5%);
+    top: 15px;
+    color: white;
+    text-shadow:3px 1px 1px gray;
+    position: relative;
+    animation: bounce 1s linear 3s 1 normal; 
+}
+
+/*Codes for second row/ websited under "SEP Websites header*/
+#row2{
+    clear: left; /*image shows up below 1st row*/
+    transform: translateY(30px); /*moves row2 down*/
+}
+
+/*Controlls the size of both image and lightbox*/
+img {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    padding: 4px 10px;
+}
+
+/* whole image*/
+ ul li {
+    float: left;
+    position: relative;
+    list-style:none; /*Gets rid if bulletpoin*/
+    margin: 20px;
+    transform: translate(10%); /*moves right*/
+}
+
+.lightbox {
+    background: linear-gradient(rgba(255,255,255,0.75), rgba(240,240,240,0.75), rgba(230,230,230,0.75)); /*color of lighbox*/
+    color: white;
+    padding: 0px 20px 0px 20px;
+    position: absolute; /*makes lightbox align with image*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0; /*lightbox=invisible*/
+    transition: all 0.7s ease-in-out 0s; 
+    
+}
+
+/*codes for movement of the header (up&down)*/
+@keyframes bounce{
+    0% {top: 0px}
+    20% {top: 20px;}
+    40% {top: 0px;}
+    60% {top: 20px;}
+    80% {top: 10px;}
+    100% {top: 20px;}
+    
+}
+
+/*Codes for fade in effect in the beginning*/
+@keyframes appear{
+    0% {opacity: 0;}
+    25% {opacity: 0.25;}
+    50% {opacity: 0.75;}
+    100% {opacity: 1;}
+    
+}
+
+/*Codes for words that appear in the lightbox*/
+.description {
+    text-shadow: 1px 2px 2px pink;
+    text-align: center;
+    font-size: 20px;
+    color: #222;
+    margin: 30px 15px;
+    top: 55%;
+}
+
+li:hover .lightbox {
+    opacity: 1; /*makes lighbox visible*/
+}

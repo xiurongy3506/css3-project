@@ -1,25 +1,46 @@
 /*The Whole page*/
-html{
-    background:url(https://static.pexels.com/photos/399161/pexels-photo-399161.jpeg) no-repeat center center fixed;
+
+html {
+    background: url(https://static.pexels.com/photos/399161/pexels-photo-399161.jpeg) no-repeat center center fixed;
     background-size: cover;
     animation: appear 3s ease-in 0s 1 normal;
 }
 
 /*Codes for heading*/
 h1 {
-    height: 40px;
+    height: 60px;
+    font-size: 33px;
     transform: translate(5%);
     top: 15px;
     color: white;
-    text-shadow:3px 1px 1px gray;
+    text-shadow: 5px 1px 2px gray;
     position: relative;
-    animation: bounce 1s linear 3s 1 normal; 
+    animation: bounce 1s linear 3s 2 normal;
+    animation: shadow 15s ease-in-out 2s infinite normal;
+}
+
+/*changes the color of the shallow of the header*/
+@keyframes shadow {
+    0% {text-shadow: 5px 1px 2px gray;}
+    30% {text-shadow: 2px 4px 20px deeppink;}
+    50% {text-shadow: 2px 4px 20px dodgerBlue;}
+    60% {text-shadow: 2px 4px 20px orange;}
+    70%{text-shadow: 2px 1px 2px silver;}
+    90% {text-shadow: 9px 1px 2px gray;}
+}
+
+/*rotates the image*/
+ul li:hover {
+    transform: rotate(350deg);
+    transition-duration: 0.5s;
 }
 
 /*Codes for second row/ websited under "SEP Websites header*/
-#row2{
-    clear: left; /*image shows up below 1st row*/
-    transform: translateY(30px); /*moves row2 down*/
+#row2 {
+    clear: left;
+    /*image shows up below 1st row*/
+    transform: translateY(30px);
+    /*moves row2 down*/
 }
 
 /*Controlls the size of both image and lightbox*/
@@ -31,16 +52,20 @@ img {
 }
 
 /* whole image*/
- ul li {
+ul li {
     float: left;
     position: relative;
-    list-style:none; /*Gets rid if bulletpoin*/
+    list-style: none;
+    /*Gets rid if bulletpoin*/
     margin: 20px;
-    transform: translate(10%); /*moves right*/
+    transform: translate(10%);
+    /*moves right*/
 }
 
+/*lightbox (shows up when you hover over the image)*/
 .lightbox {
-    background: linear-gradient(rgba(255,255,255,0.75), rgba(240,240,240,0.75), rgba(230,230,230,0.75)); /*color of lighbox*/
+    background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(240, 240, 240, 0.75), rgba(230, 230, 230, 0.75));
+    /*color of lighbox*/
     color: white;
     padding: 0px 20px 0px 20px;
     position: absolute; /*makes lightbox align with image*/
@@ -49,28 +74,26 @@ img {
     left: 0;
     right: 0;
     opacity: 0; /*lightbox=invisible*/
-    transition: all 0.7s ease-in-out 0s; 
-    
+    transition: all 0.7s ease-in-out 0s;
+
 }
 
 /*codes for movement of the header (up&down)*/
-@keyframes bounce{
-    0% {top: 0px}
+@keyframes bounce {
+    0% {top: 0px;}
     20% {top: 20px;}
     40% {top: 0px;}
     60% {top: 20px;}
     80% {top: 10px;}
     100% {top: 20px;}
-    
 }
 
-/*Codes for fade in effect in the beginning*/
-@keyframes appear{
+/*Codes for fade-in effect in the beginning*/
+@keyframes appear {
     0% {opacity: 0;}
     25% {opacity: 0.25;}
     50% {opacity: 0.75;}
     100% {opacity: 1;}
-    
 }
 
 /*Codes for words that appear in the lightbox*/
@@ -84,5 +107,6 @@ img {
 }
 
 li:hover .lightbox {
-    opacity: 1; /*makes lighbox visible*/
+    opacity: 1;
+    /*makes lighbox visible*/
 }
